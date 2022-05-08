@@ -6,3 +6,7 @@ This is simple linked list reverser that gives opportunity to reverse nodes
 * In the `Main` class you are able to config the number of nodes you want to reverse - `NODE_LIST_SIZE` 
 (default value: 10) and maximum value of the nodes - `MAX_NODE_VALUE` (default value: 100);
 * Values of nodes will be generated randomly.
+## Maven clean package
+The application supports source code checks regarding Google coding conventions from Google Java Style
+    that can be found at https://google.github.io/styleguide/javaguide.html. 
+Use command `mvn clean package` in terminal to activate the checking.
