@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class NodeInjector {
-    private final static int HEAD_NODE = 0;
+    private static final int HEAD_NODE = 0;
     private List<Node> nodes = new LinkedList<>();
 
     public Node getNodesList(int nodesListSize, int maxNodeValue) {

@@ -1,6 +1,6 @@
 public class Node {
-    int value;
-    Node next;
+    protected int value;
+    protected Node next;
 
     public Node(int value) {
         this.value = value;
