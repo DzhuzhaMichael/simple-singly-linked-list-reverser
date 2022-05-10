@@ -1,12 +1,14 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class NodeService {
+    private static final Logger logger = LogManager.getLogger(NodeService.class);
     private Node nextNode;
     private Node previousNode;
     private Node currentNode;
-    private List<Node> nodes = new LinkedList<>();
 
     public Node reverse(Node node) {
         previousNode = null;
@@ -21,15 +23,17 @@ public class NodeService {
         return previousNode;
     }
 
-    public void newNodeSequence(Node node) {
+    public String getNewNodeSequence(Node node) {
+        List<Node> nodes = new ArrayList<>();
         currentNode = node;
         while (currentNode != null) {
             nodes.add(currentNode);
             currentNode = currentNode.next;
         }
-        System.out.print("Reversed nodes sequence: ");
-        System.out.println(nodes.stream()
+        String newNodeSequence = nodes.stream()
                 .map(n -> String.valueOf(n.value))
-                .collect(Collectors.joining(" -> ")));
+                .collect(Collectors.joining(" -> "));
+        logger.info("New nodes sequence = {} ", newNodeSequence);
+        return newNodeSequence;
     }
 }

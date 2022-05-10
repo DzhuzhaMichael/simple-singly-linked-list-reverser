@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         Node headNode = nodeInjector.getNodesList(NODE_LIST_SIZE, MAX_NODE_VALUE);
-        nodeService.newNodeSequence(nodeService.reverse(headNode));
+        nodeService.getNewNodeSequence(nodeService.reverse(headNode));
     }
 }
