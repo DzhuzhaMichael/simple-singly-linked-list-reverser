@@ -10,3 +10,6 @@ This is simple linked list reverser that gives opportunity to reverse nodes
 The application supports source code checks regarding Google coding conventions from Google Java Style
     that can be found at https://google.github.io/styleguide/javaguide.html. 
 Use command `mvn clean package` in terminal to activate the checking.
+## Logger
+To save your logs to the file you need to configure `resources/log4j2.xml` (line 7) 
+using your ABSOLUTE_PATH to this project;

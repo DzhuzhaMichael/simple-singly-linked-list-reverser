@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class NodeService {
+    private static final Logger logger = LogManager.getLogger(NodeService.class);
     private Node nextNode;
     private Node previousNode;
     private Node currentNode;
@@ -27,9 +30,10 @@ public class NodeService {
             nodes.add(currentNode);
             currentNode = currentNode.next;
         }
-        System.out.print("Reversed nodes sequence: ");
-        return  nodes.stream()
+        String newNodeSequence = nodes.stream()
                 .map(n -> String.valueOf(n.value))
                 .collect(Collectors.joining(" -> "));
+        logger.info("New nodes sequence = {} ", newNodeSequence);
+        return newNodeSequence;
     }
 }
