@@ -1,13 +1,13 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
 public class NodeInjector {
     private static final int HEAD_NODE = 0;
-    private List<Node> nodes = new LinkedList<>();
 
     public Node getNodesList(int nodesListSize, int maxNodeValue) {
+        List<Node> nodes = new ArrayList<>();
         if (nodesListSize < 1) {
             throw new RuntimeException("Number of nodes should be bigger or equal to 1. Please, try again");
         }

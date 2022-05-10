@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -6,7 +6,6 @@ public class NodeService {
     private Node nextNode;
     private Node previousNode;
     private Node currentNode;
-    private List<Node> nodes = new LinkedList<>();
 
     public Node reverse(Node node) {
         previousNode = null;
@@ -21,15 +20,16 @@ public class NodeService {
         return previousNode;
     }
 
-    public void newNodeSequence(Node node) {
+    public String getNewNodeSequence(Node node) {
+        List<Node> nodes = new ArrayList<>();
         currentNode = node;
         while (currentNode != null) {
             nodes.add(currentNode);
             currentNode = currentNode.next;
         }
         System.out.print("Reversed nodes sequence: ");
-        System.out.println(nodes.stream()
+        return  nodes.stream()
                 .map(n -> String.valueOf(n.value))
-                .collect(Collectors.joining(" -> ")));
+                .collect(Collectors.joining(" -> "));
     }
 }
